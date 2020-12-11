@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "prestart": "tsc --build",
     "start": "node dist/app.js",
     "test": "jest --verbose --coverage=true"
   },

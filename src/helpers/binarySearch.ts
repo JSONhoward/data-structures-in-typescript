@@ -1,9 +1,9 @@
-export class BinaryNode {
-    data: any = null
-    left: BinaryNode = null
-    right: BinaryNode = null
+export class BinaryNode<T> {
+    data: T = null
+    left: BinaryNode<T> = null
+    right: BinaryNode<T> = null
 
-    constructor(data: any) {
+    constructor(data: T) {
         this.data = data
     }
 }

@@ -1,5 +1,5 @@
-export abstract class LinkedList {
-    protected head: ListNode = null
+export abstract class LinkedList<T> {
+    protected head: ListNode<T> = null
     protected size: number = 0
 
     length() {
@@ -10,7 +10,7 @@ export abstract class LinkedList {
         return this.size === 0
     }
 
-    indexOf(data: ListNode['element']) {
+    indexOf(data: ListNode<T>['element']) {
         if(this.size === 0) return -1
         let count = 0
         let current = this.head
@@ -38,12 +38,12 @@ export abstract class LinkedList {
     }
 }
 
-export class ListNode {
-    element: any
-    prev?: ListNode = null
-    next: ListNode = null
+export class ListNode<T> {
+    element: T
+    prev?: ListNode<T> = null
+    next: ListNode<T> = null
 
-    constructor(element: any) {
+    constructor(element: T) {
         this.element = element
     }
 }

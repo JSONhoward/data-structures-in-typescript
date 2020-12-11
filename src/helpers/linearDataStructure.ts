@@ -1,5 +1,5 @@
-export abstract class LinearDataStructure {
-    protected elements: any[] = []
+export abstract class LinearDataStructure<T> {
+    protected elements: T[] = []
     protected size = 0
     protected maxSize: number
 

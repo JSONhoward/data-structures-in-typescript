@@ -1,7 +1,7 @@
 import { LinearDataStructure } from './helpers/linearDataStructure'
 
-export class Stack extends LinearDataStructure {
-    push(element: any) {
+export class Stack<T> extends LinearDataStructure<T> {
+    push(element: T) {
         if (this.size < this.maxSize) {
             this.elements.unshift(element)
             this.size++

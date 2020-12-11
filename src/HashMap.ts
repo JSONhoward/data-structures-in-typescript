@@ -1,4 +1,4 @@
-export class HashMap {
+export class HashMap<T> {
     private size = 0
     private elements = {}
 
@@ -11,7 +11,7 @@ export class HashMap {
         }
     }
 
-    setItem(key: string | number, value: any) {
+    setItem(key: string | number, value: T) {
         if (this.hasItem(key)) {
             this.elements[key] = value
         } else {

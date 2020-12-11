@@ -1,7 +1,7 @@
 import { LinearDataStructure } from './helpers/linearDataStructure'
 
-export class Queue extends LinearDataStructure {
-    enqueue(element: any) {
+export class Queue<T> extends LinearDataStructure<T> {
+    enqueue(element: T) {
         if (this.size < this.maxSize) {
             this.elements.push(element)
             this.size++
