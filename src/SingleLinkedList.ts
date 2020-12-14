@@ -1,9 +1,9 @@
 import { LinkedList, ListNode } from './helpers/linkedList'
 
-export class SingleLinkedList extends LinkedList {
-    add(data: ListNode['element']) {
+export class SingleLinkedList<T> extends LinkedList<T> {
+    add(data: ListNode<T>['element']) {
         const node = new ListNode(data)
-        let current: ListNode
+        let current: ListNode<T>
         if (!this.head) {
             this.head = node
         } else {
@@ -17,15 +17,15 @@ export class SingleLinkedList extends LinkedList {
         this.size++
     }
 
-    addFromList(arr: ListNode['element'][]) {
+    addFromList(arr: ListNode<T>['element'][]) {
         arr.forEach(el => this.add(el))
     }
 
-    insertAt(data: ListNode['element'], index: number) {
+    insertAt(data: ListNode<T>['element'], index: number) {
         if (index < 0 || index > this.size) return false
         const node = new ListNode(data)
         let current = this.head
-        let previous: ListNode
+        let previous: ListNode<T>
 
         if (index === 0) {
             node.next = this.head
@@ -73,7 +73,7 @@ export class SingleLinkedList extends LinkedList {
             return current.element
         }
 
-        let previous: ListNode
+        let previous: ListNode<T>
         let count = 0
 
         while(count < index) {
@@ -86,11 +86,11 @@ export class SingleLinkedList extends LinkedList {
         return current.element
     }
 
-    findAndDelete(data: ListNode['element']) {
+    findAndDelete(data: ListNode<T>['element']) {
         if(!this.head) return -1
 
         let current = this.head
-        let previous: ListNode
+        let previous: ListNode<T>
 
         while(current) {
             if(current.element === data) {

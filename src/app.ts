@@ -1,16 +1,13 @@
-import { BinarySearchTree } from "./BinarySearchTree"
+import { MaxHeap } from "./MaxHeap";
 
+const myHeap = new MaxHeap();
 
-const BST = new BinarySearchTree<number>();
-
-[15, 36, 3, 12, 2, 28, 39].forEach(num => {
-    BST.insert(num)
-    console.log(BST.getCount())
+[2, 5, 7, 8, 10, 9].forEach(num => {
+    myHeap.insert(num)
 })
 
+myHeap.log()
 
-console.log(BST.DFSPreOrder())
-console.log(BST.getCount())
-BST.remove(12)
-console.log(BST.DFSPreOrder())
-console.log(BST.getCount())
+myHeap.remove()
+
+myHeap.log()

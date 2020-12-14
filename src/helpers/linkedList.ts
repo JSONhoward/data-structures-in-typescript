@@ -36,6 +36,10 @@ export abstract class LinkedList<T> {
         }
         console.log(nodes)
     }
+
+    getHead() {
+        return this.head
+    }
 }
 
 export class ListNode<T> {

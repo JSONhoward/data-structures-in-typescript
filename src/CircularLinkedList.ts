@@ -1,7 +1,7 @@
 import { LinkedList, ListNode } from './helpers/linkedList'
 
-export class CircularLinkedList extends LinkedList {
-    add(data: ListNode['element']) {
+export class CircularLinkedList<T> extends LinkedList<T> {
+    add(data: ListNode<T>['element']) {
         const node = new ListNode(data)
         let current = this.head
         if(!current) {
@@ -17,15 +17,15 @@ export class CircularLinkedList extends LinkedList {
         this.size++
     }
 
-    addFromList(arr: ListNode['element'][]) {
+    addFromList(arr: ListNode<T>['element'][]) {
         arr.forEach(el => this.add(el))
     }
 
-    insertAt(data: ListNode['element'], index: number)  {
+    insertAt(data: ListNode<T>['element'], index: number)  {
         if(index < 0 || index > this.size) return false
         const node = new ListNode(data)
         let current = this.head
-        let previous: ListNode
+        let previous: ListNode<T>
         let count = 0
 
         if(index === 0) {
@@ -50,7 +50,7 @@ export class CircularLinkedList extends LinkedList {
     delete() {
         if(!this.head) return false
         let current = this.head
-        let previous: ListNode
+        let previous: ListNode<T>
 
         if(this.size === 1) {
             this.head = null
@@ -82,7 +82,7 @@ export class CircularLinkedList extends LinkedList {
             return node.element
         }
 
-        let previous: ListNode
+        let previous: ListNode<T>
         let count = 0
         while(count < index) {
             previous = current
@@ -94,11 +94,11 @@ export class CircularLinkedList extends LinkedList {
         return current.element
     }
 
-    findAndDelete(data: ListNode['element']) {
+    findAndDelete(data: ListNode<T>['element']) {
         if(!this.head) return -1
 
         let current = this.head
-        let previous: ListNode
+        let previous: ListNode<T>
 
         while(current) {
             if(current.element === data) {

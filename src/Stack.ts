@@ -3,7 +3,7 @@ import { LinearDataStructure } from './helpers/linearDataStructure'
 export class Stack<T> extends LinearDataStructure<T> {
     push(element: T) {
         if (this.size < this.maxSize) {
-            this.elements.unshift(element)
+            this.elements.push(element)
             this.size++
         }
         return false
@@ -13,12 +13,12 @@ export class Stack<T> extends LinearDataStructure<T> {
         if (this.isEmpty()) return false
         if (amount === 1) {
             this.size--
-            return this.elements.shift()
+            return this.elements.pop()
         } else if (amount <= this.size) {
             let temp = []
             for (let i = 0; i < amount; i++) {
                 this.size--
-                temp.push(this.elements.shift())
+                temp.push(this.elements.pop())
             }
             return temp
         }
